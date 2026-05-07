@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Documentation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Earthquake Explorer</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Search</a></li>
+                <li class="active"><a href="documentation.html">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>Documentation</h1>
+        <p>How to use the USGS Earthquake Explorer web application</p>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Application Purpose</div>
+        <div class="panel-body">
+            <p>This website lets anyone search, filter, sort, and look into any recent earthquake information. It was created by me, Chris Robayo, for the CSC 225 course Final Project.</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">How To Use The Website</div>
+        <div class="panel-body">
+            <ol>
+                <li>Open the Search page.</li>
+                <li>Choose any start date, end date, minimum magnitude, and API order.</li>
+                <li>Click Search to fetch earthquake data.</li>
+                <li>Use the place filter, tsunami filter, or local sort to change how the results will show.</li>
+                <li>Click View Details to open a second page with more information about any single earthquake.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">API Information</div>
+        <div class="panel-body">
+            <p>This website uses the official USGS Earthquake Catalog API, so no API key is needed for this.</p>
+            <h2>Endpoint 1: Query</h2>
+            <p>This query endpoint returns earthquake events in GeoJSON format.</p>
+            <pre>https://earthquake.usgs.gov/fdsnws/event/1/query</pre>
+            <h2>Endpoint 2: Count</h2>
+            <p>The count endpoint returns the number of earthquakes that match whatever the user searched.</p>
+            <pre>https://earthquake.usgs.gov/fdsnws/event/1/count</pre>
+            <h2>Details Page</h2>
+            <p>The Details page uses the query endpoint again with an event id to request a specific earthquake.</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">User Interaction With Data</div>
+        <div class="panel-body">
+            <ul>
+                <li>Filtering by the date range and the minimum magnitude</li>
+                <li>Ordering by the time or magnitude</li>
+                <li>You can locally filter the text by the place name</li>
+                <li>Filter for tsunami advisories</li>
+                <li>Sorting by the place, depth, or significance</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

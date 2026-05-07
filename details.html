@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Earthquake Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="startDetailPage();">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Earthquake Explorer</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Search</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>Earthquake Details</h1>
+        <p>View a single earthquake event from the USGS Earthquake Catalog</p>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Selected Event</div>
+        <div class="panel-body">
+            <div id="detailMessage"></div>
+            <div id="detailContent">Loading event details...</div>
+        </div>
+    </div>
+
+    <p><a class="btn btn-primary" href="index.html">Back to Search</a></p>
+
+    <hr>
+    <div class="footer">
+        <p>Data source: Official USGS Earthquake Catalog API.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

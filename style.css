@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #878c92ab;
+    color: #333;
+    font-weight: bold;
+    max-width: 1000px;
+    margin: 40px auto;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 30px;
+}
+
+img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+hr {
+    border: 1px solid grey;
+}
+
+.jumbotron {
+    background-color: #34495e;
+    color: white;
+    border: 1px solid #777;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #777;
+}
+
+.panel {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #777;
+    overflow: hidden;
+    border: 1px solid #2c3e50;
+}
+
+.panel-heading {
+    font-size: 18px;
+    background-color: #34495e !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.form-control {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #34495e;
+    border-color: #34495e;
+}
+
+.table thead tr {
+    background-color: #34495e;
+    color: white;
+}
+
+.stat-box {
+    background-color: #34495e;
+    color: white;
+    border: 1px solid #2c3e50;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px #777;
+}
+
+.stat-number {
+    font-size: 30px;
+    color: white;
+}
+
+.good-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.error-message {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.small-note {
+    font-size: 13px;
+    color: #555;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.detail-row {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.label-text {
+    color: #2c3e50;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 15px;
+    }
+
+    .jumbotron h1 {
+        font-size: 36px;
+        color: white;
+    }
+
+    .jumbotron p {
+        color: white;
+    }
+
+.table {
+    margin-bottom: 0;
+    }   
+}
+
+.navbar {
+    background-color: #34495e;
+    border: 1px solid #2c3e50;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.navbar .navbar-brand {
+    color: white !important;
+}
+
+.navbar .navbar-nav li a {
+    color: white !important;
+}
+
+.navbar .navbar-nav li a:hover {
+    background-color: #2c3e50 !important;
+    color: white !important;
+}
+
+.navbar .navbar-nav .active a {
+    background-color: #2c3e50 !important;
+    color: white !important;
+}

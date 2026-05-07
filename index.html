@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>USGS Earthquake Explorer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="startIndexPage();">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Earthquake Explorer</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="index.html">Search</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>USGS Earthquake Explorer</h1>
+        <p>Search recent earthquakes from the official USGS Earthquake Catalog API</p>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Search Controls</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" class="form-control">
+                </div>
+                <div class="col-sm-3">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" class="form-control">
+                </div>
+                <div class="col-sm-3">
+                    <label for="minMagnitude">Minimum Magnitude</label>
+                    <select id="minMagnitude" class="form-control">
+                        <option value="0">0+</option>
+                        <option value="1">1+</option>
+                        <option value="2.5" selected>2.5+</option>
+                        <option value="4.5">4.5+</option>
+                        <option value="6">6+</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <label for="apiOrder">API Order</label>
+                    <select id="apiOrder" class="form-control">
+                        <option value="time" selected>Newest First</option>
+                        <option value="time-asc">Oldest First</option>
+                        <option value="magnitude">Largest Magnitude</option>
+                        <option value="magnitude-asc">Smallest Magnitude</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="placeFilter">Place Filter</label>
+                    <input type="text" id="placeFilter" class="form-control" placeholder="Example: California" onkeyup="applyLocalControls();">
+                </div>
+                <div class="col-sm-3">
+                    <label for="tsunamiFilter">Tsunami Advisory</label>
+                    <select id="tsunamiFilter" class="form-control" onchange="applyLocalControls();">
+                        <option value="all">Show All</option>
+                        <option value="yes">Tsunami Only</option>
+                        <option value="no">No Tsunami Only</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <label for="localSort">Local Sort</label>
+                    <select id="localSort" class="form-control" onchange="applyLocalControls();">
+                        <option value="none">Use API Order</option>
+                        <option value="place">Place A-Z</option>
+                        <option value="depth">Depth Low-High</option>
+                        <option value="significance">Significance High-Low</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <label>&nbsp;</label>
+                    <button class="btn btn-primary btn-block" onclick="searchEarthquakes();">Search</button>
+                </div>
+            </div>
+            <div id="messageBox"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="stat-box">
+                <div id="displayedCount" class="stat-number">0</div>
+                <div>Events Displayed</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="stat-box">
+                <div id="totalCount" class="stat-number">0</div>
+                <div>Total Matching USGS Count</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="stat-box">
+                <div id="largestMagnitude" class="stat-number">0.0</div>
+                <div>Largest Magnitude Shown</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Earthquake Results</div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Magnitude</th>
+                        <th>Place</th>
+                        <th>Time</th>
+                        <th>Depth</th>
+                        <th>Alert</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody">
+                    <tr><td colspan="6">Loading earthquakes...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+    <div class="footer">
+        <p>Data source: Official USGS Earthquake Catalog API. Built with HTML, Bootstrap, and Vanilla JavaScript.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
